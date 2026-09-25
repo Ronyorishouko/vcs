@@ -1,0 +1,296 @@
+{% load static %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<meta name="referer" content="strict-origin-when-cross-origin" />
+			{% block head %}
+			{% endblock head %}
+		<body>
+		<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-auto bg-light sticky-top">
+			<div class="d-flex flex-sm-column flex-row flex-nowrap bg-light align-items-center sticky-top">
+				<a href="/" class="d-block p-3 link-dark text-decoration-none" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
+						<img src="{% static 'scripts/datatables/Bootstrap-5-5.3.0/bootstrap-icons-1.11.1/house.svg' %}" alt="Bootstrap" width="32" height="32">
+				</a>
+				<div class="dropdown">
+					<a href="#" class="nav nav-pills nav-flush flex-sm-column p-3 flex-row flex-nowrap link-dark mb-auto mx-auto text-center align-items-center text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+							<img src="{% static 'scripts/datatables/Bootstrap-5-5.3.0/bootstrap-icons-1.11.1/camera-video.svg' %}" alt="Bootstrap" width="32" height="32">
+							<span>Polycom</span>
+					</a>
+					<ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser3">
+						<li><a class="dropdown-item" href="https://spb99-vcsfs1.gazprom-neft.local/Poly/Endpoints">Endpoints</a></li>
+						<li><a class="dropdown-item" href="https://spb99-vcsfs1.gazprom-neft.local/Poly/CDR">CDR DMA</a></li>
+						<li><a class="dropdown-item" href="https://spb99-vcsfs1.gazprom-neft.local/Poly/illegal/">Нелегалы</a></li>
+						<li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#consumption">Отчет по потреблению ВКС</a></li>
+					</ul>
+				</div>
+				<div class="dropdown">
+					<a href="#" class="nav nav-pills nav-flush flex-sm-column p-3 flex-row flex-nowrap link-dark mb-auto mx-auto text-center align-items-center text-decoration-none dropdown-toggle" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
+						<img src="{% static 'scripts/datatables/Bootstrap-5-5.3.0/bootstrap-icons-1.11.1/people.svg' %}" alt="Bootstrap" width="32" height="32">
+						<span>TrueConf</span> 
+					</a>
+					<ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser3">
+						<li><a class="dropdown-item" href="https://spb99-vcsfs1.gazprom-neft.local/Users">TrueConf Users</a></li>
+						<li><a class="dropdown-item" href="https://spb99-vcsfs1.gazprom-neft.local/Calls">TrueConf Calls</a></li>
+						<li><a class="dropdown-item" href="https://spb99-vcsfs1.gazprom-neft.local/Conferences">TrueConf Conferences</a></li>
+						<li><a class="dropdown-item" href="https://spb99-vcsfs1.gazprom-neft.local/Versions">TrueConf Versions</a></li>
+						<li><a class="dropdown-item" href="https://spb99-vcsfs1.gazprom-neft.local/TC_AI">TrueConf AI</a></li>
+                                                <li><a class="dropdown-item" href="https://spb99-vcsfs1.gazprom-neft.local/Channels">TrueConf Channels</a></li>
+                                                <li><a class="dropdown-item" href="https://spb99-vcsfs1.gazprom-neft.local/Survey">TrueConf Survey</a></li>
+					</ul>
+					
+				</div>
+					<ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center align-items-center">
+						<li class="nav-item">
+							<a href="https://spb99-vcsfs1.gazprom-neft.local/Poly/Reports" class="nav-link py-3 link-dark px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
+								<img src="{% static 'scripts/datatables/Bootstrap-5-5.3.0/bootstrap-icons-1.11.1/receipt-cutoff.svg' %}" alt="Bootstrap" width="32" height="32">
+								<p>VCS Reports</p>
+
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="https://spb99-vcsfs1.gazprom-neft.local/find_sid" class="nav-link py-3 link-dark px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
+								<img src="{% static 'scripts/datatables/Bootstrap-5-5.3.0/bootstrap-icons-1.11.1/search.svg' %}" alt="Bootstrap" width="32" height="32">
+								<p>Find SID</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link py-3 link-dark px-2" title="" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-placement="right" data-bs-original-title="Home">
+								<img src="{% static 'scripts/datatables/Bootstrap-5-5.3.0/bootstrap-icons-1.11.1/table.svg' %}" alt="Bootstrap" width="32" height="32">
+								<p>ССЗИ</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="https://spb99-vcsfs1.gazprom-neft.local/automatron" class="nav-link py-3 link-dark px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
+								<img src="{% static 'scripts/datatables/Bootstrap-5-5.3.0/bootstrap-icons-1.11.1/wrench.svg' %}" alt="Bootstrap" width="32" height="32">
+								<p>AutoVCS</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="dropdown" style="position:fixed; bottom:0" id="tasks_dropdown">
+					<a href="#" class="nav nav-pills nav-flush flex-sm-column p-3 flex-row flex-nowrap link-dark mb-auto mx-auto text-center align-items-center text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+						<img src="{% static 'scripts/datatables/Bootstrap-5-5.3.0/bootstrap-icons-1.11.1/motherboard.svg' %}" alt="Bootstrap" width="32" height="32" >
+						<span>Sync Tasks</span> 
+					</a>
+					<ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser3" id="">
+						<li><span class="dropdown-item">Обновление задач...</span></li>
+					</ul>
+				</div>
+		</div>
+		<div class="col-sm min-vh-100">
+			{% csrf_token %}
+		<div class="container">
+		<div class="position-relative top-0 end-0" style="justify-content: end; display: flex;">{{auth}}: {{user}}</div>
+			{% if auth == "User" or auth == "Admin" or auth == "Operator" or auth == "Anonymous"%}
+				{% block table %}
+				{% endblock table %}
+			{% else %}
+		<div class="d-flex align-items-center justify-content-center vh-100">
+			<div class="text-center">
+				<h1 class="display-1 fw-bold">401</h1>
+				<p class="fs-3"> <span class="text-danger">Opps!</span> You don't have access here. </p>
+				<p class="lead">
+					<p><del>You shall not p...</del></p><p>Please contact the administrator</p>
+				  </p>
+			</div>
+		</div>
+			{% endif %}
+					
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-xl">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Шаблон доступов TrueConf</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<form>
+				{% csrf_token %}
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-md">
+								<label for="recipient-name" class="col-form-label-lg">Дочернее общество</label>
+								<input type="text" class="form-control" id="message-text-DO"></textarea>
+							</div>
+						</div>
+						<div class="row justify-content-md-center">
+							<label for="recipient-name" class="col-1 col-form-label-lg">АРМ</label>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<label for="recipient-name" class="col-form-label">Код площадки</label>
+								<textarea class="form-control" id="message-text-location-arm"></textarea>
+							</div>
+							<div class="col-md-4">
+								<label for="recipient-name" class="col-form-label">Подсеть</label>
+								<textarea class="form-control" id="message-text-arm"></textarea>
+							</div>
+							<div class="col-md-4">
+								<label for="recipient-name" class="col-form-label">Адрес площадки</label>
+								<textarea class="form-control" id="message-text-address-arm"></textarea>
+							</div>
+						</div>
+						<div class="row justify-content-md-center">
+							<label for="recipient-name" class="col-1 col-form-label-lg">Телефония</label>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<label for="recipient-name" class="col-form-label">Код площадки</label>
+								<textarea class="form-control" id="message-text-location-tel"></textarea>
+							</div>
+							<div class="col-md-4">
+								<label for="recipient-name" class="col-form-label">Подсеть</label>
+								<textarea class="form-control" id="message-text-tel"></textarea>
+							</div>
+							<div class="col-md-4">
+								<label for="recipient-name" class="col-form-label">Адрес площадки</label>
+								<textarea class="form-control" id="message-text-address-tel"></textarea>
+							</div>
+						</div>
+						<div class="row justify-content-md-center">
+							<label for="recipient-name" class="col-1 col-form-label-lg">ВКС</label>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<label for="recipient-name" class="col-form-label">Код площадки</label>
+								<textarea class="form-control" id="message-text-location-vcs"></textarea>
+							</div>
+							<div class="col-md-4">
+								<label for="recipient-name" class="col-form-label">Подсеть</label>
+								<textarea class="form-control" id="message-text-vcs"></textarea>
+							</div>
+							<div class="col-md-4">
+								<label for="recipient-name" class="col-form-label">Адрес площадки</label>
+								<textarea class="form-control" id="message-text-address-vcs"></textarea>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-info" data-bs-target="#infoModal" data-bs-toggle="modal" data-bs-dismiss="modal">Подсказка по заполнению</button>
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+				<button type="button" onclick=get_sapmle_tc() class="btn btn-primary">Создать</button>
+			</div>
+		</div>
+	</div>
+</div>
+<img src="/static/css/loading.gif" id="loading_gif" style="position: absolute;left: 45%;top: 30%;z-index:2056;" class="d-none ">
+{% if auth == "User" or auth == "Admin" or auth == "Operator"  or auth == "Anonymous" %}
+<div class="modal fade" id="consumption" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="alert alert-success alert-dismissible fade d-none ms-auto me-auto col-md-4" id="success_suid_msg">
+		<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+		<strong>Success!</strong> Отчет загружен успешно.
+	</div>
+	<div class="alert alert-danger alert-dismissible fade d- none ms-auto me-auto col-md-4" id="danger_suid_msg">
+		<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+		<strong>Danger!</strong> Ошибка при загрузке отчета!
+	</div>
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Выбор ДО для отчета</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<form>
+				{% csrf_token %}
+					<div class="mb-3">
+						<input type="date" class="form-control" style="width:auto; display: inline;" id="start_date_cdr">
+						<input type="date" class="form-control" style="width:auto; display: inline;" id="end_date_cdr">
+					</div>
+					<div class="mb-3">
+						<label for="recipient-name" class="col-form-label">ДО:</label>
+						<select id="get_do_name" name="do-name" class="form-select form-select-sm" style="width:auto;" aria-label=".form-select-sm" placeholder="Выберите ДО"></select>
+					</div>
+				</form>
+				<hr>
+				<div class="mb-3">
+					<label for="recipient-name" class="col-form-label">Отчет из СУИД</label>
+					<form id="upload_suid" action="../upload_page/" enctype="multipart/form-data" method="post" class="input-group" novalidate="">
+						{% csrf_token %}
+						<input type="file"  name="myfile1" class="form-control" id="inputGroupFile" aria-describedby="inputGroupFileAddon" aria-label="Upload"/>
+						<input type="button" onclick="send_file('suid');" class="btn btn-outline-primary" id="inputGroupFileAddon" value="Загрузить"/>
+					</form>
+				</div>
+				<hr>
+				<div class="mb-3">
+					<label for="recipient-name" class="col-form-label">Каталог ДО</label>
+					<form id="upload_suid_catalog" action="../upload_page/" enctype="multipart/form-data" method="post" class="input-group" novalidate="">
+						{% csrf_token %}
+						<input type="file"  name="catalog_File" class="form-control" id="inputGroupFile_catalog" aria-describedby="inputGroupFileAddon_catalog" aria-label="Upload"/>
+						<input type="button" onclick="send_file('catalog')" class="btn btn-outline-primary" id="inputGroupFileAddon_catalog" value="Загрузить"/>
+					</form>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+				<button type="button" onclick=get_report() class="btn btn-primary">Создать</button>
+			</div>
+		</div>
+	</div>
+</div>
+{% endif %}		
+
+<div class="modal fade" id="infoModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+	<div class="modal-dialog modal-dialog-centered modal-xl">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalToggleLabel2">Инструкция по заполнению</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="{% static 'css/info_sample.jpg' %}" alt="Bootstrap" style="width:1080px;">
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-primary" data-bs-target="#exampleModal" data-bs-toggle="modal" data-bs-dismiss="modal">Начать заполнение</button>
+			</div>
+		</div>
+	</div>
+</div>
+			{% block footer %}
+			{% endblock footer %}
+		</div>
+	</div>
+</div>
+		<script>
+	
+	function getCookie(name) {
+	  const value = `; ${document.cookie}`;
+	  const parts = value.split(`; ${name}=`);
+	  if (parts.length === 2) return parts.pop().split(';').shift();
+	}
+get_sapmle_tc = function(){
+	subnet_arm = document.getElementById('message-text-arm').value
+	subnet_tel = document.getElementById('message-text-tel').value
+	subnet_vcs = document.getElementById('message-text-vcs').value
+	if ((subnet_arm != "" || subnet_tel != "" || subnet_vcs != "") && (document.getElementById('message-text-DO').value != ""))
+	{
+		$.ajax({
+			url: 'create_sample_tc/',
+			method: 'POST',
+			data: {'arm':document.getElementById('message-text-arm').value, 'tel':document.getElementById('message-text-tel').value, 'VCS': document.getElementById('message-text-vcs').value, 'do':document.getElementById('message-text-DO').value, 'location-arm':document.getElementById('message-text-location-arm').value, 'address-arm': document.getElementById('message-text-address-arm').value, 'location-vcs':document.getElementById('message-text-location-vcs').value, 'address-vcs': document.getElementById('message-text-address-vcs').value, 'location-tel':document.getElementById('message-text-location-tel').value, 'address-tel': document.getElementById('message-text-address-tel').value,'csrfmiddlewaretoken':getCookie('csrftoken')},
+			dataType: 'binary',
+			xhrFields: {
+				'responseType': 'blob'
+			},
+			headers:{
+				'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+				'Upgrade-Insecure-Requests': '1',
+			},
+			success: function (data, status, xhr) {
+				var link = document.createElement('a');
+				filename='Доступы МСЭ для TrueConf '+document.getElementById('message-text-DO').value+'.xlsx';
+				link.href = URL.createObjectURL(data);
+				link.download = filename;
+				link.click();
+					console.log(data)
+	
+			}
+		});
+	}else{alert("Введи хотябы одну подсеть и все поля по площадке")}
+}
+		</script>
+		</body>
+</html>

@@ -1,0 +1,58 @@
++---------------------------------------+
+| Connected!                            |
+|                                       |
+| sql-statement                         |
+| help [tablename]                      |
+| quit                                  |
+|                                       |
++---------------------------------------+
+SQL> select * from TerminalReg.dbo.Model_Reg;
+1|none
+2|Cisco C-Series
+3|HDX 4000 HD
+4|HDX 4500
+5|HDX 6000 HD
+6|HDX 7000 HD
+7|HDX 8000 HD
+8|HDX 9006
+9|Polycom RealPresence Debut_0B
+10|RealPresence Debut
+11|RealPresence Group 300
+12|RealPresence Group 310
+13|RealPresence Group 500
+14|RealPresence Group 700
+15|VSX 7000A
+33|Cisco Webex Codec Plus
+35|Trio 8800
+37|Cisco Webex Codec Pro
+42|Cisco Webex Room Kit
+43|Cisco Webex Board 55S
+44|Cisco Webex Room Kit Mini
+45|Cisco TelePresence SX10
+46|RealPresence Desktop
+47|Cisco TelePresence SX80
+48|TANDBERG Profile 52 Dual
+49|TANDBERG Codec C40
+50|Cisco Spark Codec Plus
+51|Cisco TelePresence SX20
+52|Cisco TelePresence MX700
+53|TANDBERG Codec C20
+54|StudioX30
+55|TANDBERG E20
+56|EVC150
+57|QDX 6000
+58|Yealink VC110
+59|G7500
+60|StudioX50
+61|IdeaHub S
+62|MeetingEye 600
+63|VC880
+64|Edge 95MXP
+65|MeetingEye 400
+67|MeetingEye 800
+68|IdeaHub Pro
+69|TrueConf Group Silent
+70|Гранат А-70
+71|Протей Гранат А-74
+72|Гранат А-74
+SQL> 

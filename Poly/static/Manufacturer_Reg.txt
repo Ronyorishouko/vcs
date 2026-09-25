@@ -1,0 +1,21 @@
++---------------------------------------+
+| Connected!                            |
+|                                       |
+| sql-statement                         |
+| help [tablename]                      |
+| quit                                  |
+|                                       |
++---------------------------------------+
+SQL> select * from TerminalReg.dbo.Manufacturer_Reg;
+1|none
+2|Cisco
+10|Polycom
+17|AverMedia
+18|Huawei
+19|YeaLink
+20|Tandberg Edge
+21|Tandberg
+22|TrueConf
+23|Протей
+24|Гранат А-74
+SQL> 

@@ -1,0 +1,160 @@
+
+*{
+    margin: 30;
+    padding: 0;
+}
+
+
+.container{
+    width: 100%;
+    height: auto;
+ } 
+
+.pagination {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  column-gap: 2px;
+}
+
+.Title {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    padding: 10px;
+    background: linear-gradient(125deg, rgb(0, 122, 194),rgb(19, 71, 105));
+    color: rgb(255, 255, 255);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: 4px;
+    text-align: center;
+    font-size: 1vw;
+}
+
+.Users_table_container{
+    /*margin-top: 2%;*/
+}
+
+.table-container{
+    /*margin-top: 2%;*/
+}
+
+.tab1_menu{
+    background: rgb(19, 71, 105);  
+    border: 0.5px solid black;
+    display: flex;
+    justify-content: center;  
+    width: auto;
+    height: auto;
+    margin:auto;
+    padding: 10px
+}
+
+.users{
+    display: block;
+    position: relative;
+    right: 0px;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    background-color: white;
+    padding-top: 20px;
+}
+.button {
+    width: 100%;
+    height: auto;
+    margin:auto;  
+    font-size: 0.6vw;  
+}
+.button-middle{
+    width: 100%;
+    height: auto;
+    margin:auto;
+    font-size: 0.6vw;
+    border-left: 1px white solid;
+    border-right: 1px white solid;
+
+}
+.button-middle a{
+    position: relative;
+    outline: none;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    letter-spacing: 1px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 25%;
+    height: auto;
+    width: auto;
+}
+.button-middle a:hover {
+    color: rgb(4, 163, 255);
+    /*letter-spacing: 1.5px;*/
+}
+
+.button a{  
+    position: relative;
+    outline: none;
+    text-decoration: none; 
+    color: rgb(255, 255, 255);
+    letter-spacing: 1px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 20%;
+    height: auto;
+    width: auto;
+}
+.button + .button:before{
+    content: '';
+   
+    left: calc(-4em - 5px);
+    border: 1px solid white;
+}
+.button a:hover {
+    color: rgb(4, 163, 255);
+    /*letter-spacing: 1.5px;*/
+}
+.userstext{
+    display: revert;
+    text-align: right;
+    position: sticky;
+    letter-spacing: 4px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: white;
+    height: auto;
+    font-size: 0.9vw;
+}
+
+.table{
+    display: flex;
+    width: 100%;
+    height: auto;
+    margin:auto;
+    background-color: rgb(255, 255, 255);
+    text-align: left;
+    letter-spacing: 4px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+/*    font-weight: 200;*/
+}
+
+#table_wrapper{
+    width: 90%;
+    height: auto;
+    margin:auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+@media screen and (min-width: 1024px){
+#table_wrapper{
+    display: flex
+    width: 90%;
+    height: 90%;
+}
+
+
+#table_wrapper{
+    width: 90%;
+    height: auto;
+    margin:auto;
+    
+    }
+}
+
