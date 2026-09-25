@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Статистика ботов{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'Bots/css/bots_dashboard.css' %}">
+
+<div id="bots-dashboard" class="bots-dashboard">
+
+    {# Переключатель ботов: список вкладок, наполняется JS-ом из bots_json #}
+    <div class="bots-tabs" id="bots-tabs"></div>
+
+    <div class="bots-toolbar">
+        <label>
+            Период:
+            <select id="bots-range">
+                <option value="24">24 часа</option>
+                <option value="168" selected>7 дней</option>
+                <option value="720">30 дней</option>
+                <option value="0">Всё</option>
+            </select>
+        </label>
+        <span class="bots-last-run" id="bots-last-run"></span>
+        <button type="button" id="bots-refresh">Обновить</button>
+    </div>
+
+    <div class="bots-panel" id="bots-panel">
+        <div class="bots-loading" id="bots-loading">Загрузка...</div>
+
+        <div class="bots-chart-wrap">
+            <canvas id="bots-chart" height="110"></canvas>
+        </div>
+
+        <table class="bots-table" id="bots-table">
+            <thead id="bots-table-head"></thead>
+            <tbody id="bots-table-body"></tbody>
+        </table>
+
+        <div class="bots-runs" id="bots-runs">
+            <h4>Последние запуски сбора</h4>
+            <table class="bots-runs-table" id="bots-runs-table">
+                <thead>
+                    <tr>
+                        <th>Начало</th>
+                        <th>Статус</th>
+                        <th>Добавлено</th>
+                        <th>Обновлено</th>
+                        <th>Ошибка</th>
+                    </tr>
+                </thead>
+                <tbody id="bots-runs-body"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{# Данные о ботах, отданные вьюхой (slug, имя, source_type, metric_schema, последний запуск) #}
+<script id="bots-data" type="application/json">{{ bots_json|safe }}</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<script src="{% static 'Bots/js/bots_dashboard.js' %}"></script>
+{% endblock %}
